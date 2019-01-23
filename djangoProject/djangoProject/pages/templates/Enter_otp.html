@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} First page {% endblock %}
+
+{% block content %}
+
+<!--<a href="{% url 'home' %}">Home</a> | <a href="{% url 'about' %}">About</a>
+<br/><br/>-->
+
+
+
+<!--<img src="{% static 'images/dragon.jpg' %}">
+-->
+<form method="post" action="{% url 'Otp_validation' %}" class="custom-centered">
+  {% csrf_token %}
+	<link rel="stylesheet" type="text/css" href="{% static 'styles/hm.css' %}">
+  <div class="form-group">
+    <label for="exampleInputEmail1">Enter Otp</label>
+    <input type="text" style="width: 90%" name="otp_valid" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter UserId">
+  </div>
+  <script type="text/javascript">
+    alert('{{message}}');
+  </script>
+  
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+
+
+{% endblock %}
